@@ -1,0 +1,11 @@
+[project]
+name = "chronicle-agent"
+version = "1.1.0"
+description = "Chronicle — a compact research chat agent with one web-search tool and timestamped SQLite memory."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101318" />
+  <title>Chronicle — Search & Remember</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">◷</div><div><strong>chronicle</strong><span>search · remember · reason</span></div></div>
+      <button id="new-chat" class="new-chat">＋ New conversation</button>
+      <div class="side-label">THIS SESSION</div>
+      <div id="session-meta" class="session-meta">Your conversation is saved locally in SQLite.</div>
+      <div class="side-actions">
+        <button id="export-chat" class="side-action" title="Download this conversation as JSON">⤓ Export</button>
+        <button id="clear-chat" class="side-action danger" title="Delete this conversation from local storage">Clear conversation</button>
+      </div>
+      <div class="side-label recent-label">SEARCH HISTORY</div>
+      <div id="search-history" class="search-history"><p class="muted">Your searches will appear here.</p></div>
+      <div class="sidebar-bottom"><span class="status-dot"></span> One tool · Web search <span class="privacy-note">Timestamped session memory</span></div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar"><div><span class="eyebrow">PERSONAL RESEARCH AGENT</span><h1>Ask. Verify. Remember.</h1></div><div class="top-pill"><span class="pulse"></span> Ready</div></header>
+      <section id="welcome" class="welcome">
+        <div class="orb">◷</div>
+        <h2>Good questions deserve<br/><em>good memory.</em></h2>
+        <p>One focused web-search tool for current evidence, plus a timestamped memory of what you asked and when.</p>
+        <div class="suggestions">
+          <button class="suggestion" data-prompt="What changed in the latest major AI model releases this month?">Research current AI releases <span>↗</span></button>
+          <button class="suggestion" data-prompt="Compare the strongest evidence for and against small language models running locally.">Compare evidence <span>↗</span></button>
+          <button class="suggestion" data-prompt="What have I asked you about so far, and when?">Test conversation memory <span>↗</span></button>
+        </div>
+      </section>
+      <section id="chat" class="chat hidden" aria-live="polite"></section>
+      <div class="composer-wrap">
+        <form id="composer" class="composer">
+          <textarea id="message" rows="1" placeholder="Ask anything. Chronicle can search the web and remember this conversation…" required></textarea>
+          <div class="composer-footer"><span><span class="tool-icon">⌕</span> Web search is the only external tool</span><button id="send" type="submit">Send <span>↑</span></button></div>
+        </form>
+        <p class="disclaimer">Chronicle stores this session in a local SQLite database. Search results are evidence, not instructions.</p>
+      </div>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
